@@ -10,43 +10,43 @@ int main(){
     system("clear");
     //node 1-10
     node *node1 = new node();
-    node1->nilai = 25;
+    node1->nilai = 100;
     node1->next = nullptr;
 
     node *node2 = new node();
-    node2->nilai = 50;
+    node2->nilai = 92;
     node2->next = nullptr;
 
     node *node3 = new node();
-    node3->nilai = 55;
+    node3->nilai = 45;
     node3->next = nullptr;
 
     node *node4 = new node();
-    node4->nilai = 65;
+    node4->nilai = 87;
     node4->next = nullptr;
 
     node *node5 = new node();
-    node5->nilai = 45;
+    node5->nilai = 71;
     node5->next = nullptr;
 
     node *node6 = new node();
-    node6->nilai = 35;
+    node6->nilai = 99;
     node6->next = nullptr;
 
     node *node7 = new node();
-    node7->nilai = 15;
+    node7->nilai = 95;
     node7->next = nullptr;
 
     node *node8 = new node();
-    node8->nilai = 05;
+    node8->nilai = 60;
     node8->next = nullptr;
 
     node *node9 = new node();
-    node9->nilai = 85;
+    node9->nilai = 55;
     node9->next = nullptr;
 
     node *node10 = new node();
-    node10->nilai = 95;
+    node10->nilai = 88;
     node10->next = nullptr;
 
     //tail dan headnya
@@ -65,31 +65,16 @@ int main(){
     node9->next=node10;
     
     //nampilin outputnya
-    cout <<"Nilai awal: "<<endl;
+    cout <<"Nilai-nilai listnya: "<<endl;
     node *temp=head;
     while (temp!=nullptr){
         cout << temp->nilai << " ";
         temp = temp->next;
     }
 
-    //nambah list baru dibelakang
-    node *node12 =new node();
-    node12->nilai =12;
-    node12->next =nullptr;
-    node10->next =node12;
-    tail = node12;
-    cout << "\nnilai list setelah ditambahkan divakhir: "<<endl;
-    cout<<endl;
-    
-    temp = head;
-    while (temp != nullptr){
-        cout<<temp->nilai<<" ";
-        temp= temp->next;
-    }
-
     //menambah node list baru didepan
     node *node11 =new node();
-    node11->nilai= 105;
+    node11->nilai= 70;
     node11->next= nullptr;
     node11->next= head;
     head = node11;
@@ -101,13 +86,28 @@ int main(){
         cout<<temp->nilai<<" ";
         temp=temp->next;
     }
+
+    //nambah list baru dibelakang
+    node *node12 =new node();
+    node12->nilai =50;
+    node12->next =nullptr;
+    node10->next =node12;
+    tail = node12;
+    cout << "\nnilai list setelah ditambahkan di akhir: "<<endl;
+    cout<<endl;
+    
+    temp = head;
+    while (temp != nullptr){
+        cout<<temp->nilai<<" ";
+        temp= temp->next;
+    }
     
     //menyisipkan node baru di antara node" lain 
     node *node13= new node();
     node13->nilai = 0;
-    node13->next = node8;
-    node7->next =  node13;
-    cout << "\nnilai list setelah disisipkan di antara list ke-7 dan ke-8"<<endl;
+    node13->next = node4;
+    node3->next =  node13;
+    cout << "\nnilai list setelah disisipkan 0 setelah 45"<<endl;
     cout<<endl;
 
     temp = head;
@@ -116,9 +116,9 @@ int main(){
         temp = temp->next;
     }
 
-    // menghapus list ke 10
+    // menghapus nilai 90
     temp = head;
-    while(temp ->next->nilai!= 95){
+    while(temp ->next->nilai!= 90){
         temp = temp ->next;
     }
 
@@ -126,7 +126,24 @@ int main(){
     temp ->next = hapus -> next;
     delete hapus;
 
-    cout << "\nnilai list setelah list ke-10 dihapus: "<<endl;
+    cout << "\nnilai list setelah 90 dihapus : "<<endl;
+    temp = head;
+    while (temp != nullptr){
+        cout << temp->nilai << " ";
+        temp = temp->next;
+    }
+
+    // menghapus nilai 60
+    temp = head;
+    while(temp ->next->nilai!= 60){
+        temp = temp ->next;
+    }
+
+    hapus = temp;
+    temp ->next = hapus -> next;
+    delete hapus;
+
+    cout << "\nnilai list setelah 90 dihapus : "<<endl;
     temp = head;
     while (temp != nullptr){
         cout << temp->nilai << " ";
