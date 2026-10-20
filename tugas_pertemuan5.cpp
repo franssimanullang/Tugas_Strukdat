@@ -1,13 +1,24 @@
 #include <iostream>
 using namespace std;
 
-void urutinData (){
-    
+//kita pakai teknik bubble sort untuk mengurutkan datanya 
+void urutinData (vector<int>& data ){
+    int n = data.size();
+    for (int i=0; i < n-1; i ++){
+        for (int j=0; j<n-i-1;j++){
+            //kalau yang kiri lebih besar dari kanman maka ditukar posisinya
+            if (data[j]>data[j+1]){//jadi kalau data index 0 lebih besar dari data index 1 maka
+                int temp = data[j]; // nilai data index 0 menjadi temp 
+                data[j]=data[j+1];//dan data index 0 tadi akan jadi data index 1 (ubah posisi)
+                data[j+1]=temp;// nah data index ke 1 dijadikan temp untuk bandingin dengan nilai lainnya lagi sampai data ke terakhir
+            }
+        }
+    }
 }
 
 int binarysearch(int data[], int n, int target){
     int low=0;
-    int high = n-1;
+    int high = data.size()-1;
 
     while (low<=high){
         int mid = low+ (high-low)/2;
@@ -24,9 +35,7 @@ int binarysearch(int data[], int n, int target){
 }
 
 int main(){
-    int data[] = {};
-    int n = 7;
-    int target;
+    int n,target;
     
     cout<<"masukan nilai yang ingin dicari: ";
     cin>>target;
