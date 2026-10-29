@@ -52,3 +52,37 @@ void list(const vector<string>& data){
     }
     cout << "]" << endl;
 }
+
+int main()
+{
+    system("clear");
+    string kalimat,kata;
+    vector<string> data;
+
+    a:
+    cout << "Masukkan beberapa kata (pisahkan dengan spasi): ";
+    getline(cin, kalimat);//supaya bisa baca spasinya jga
+
+    stringstream tiapkata(kalimat);//stringstream fungsinya untuk menginput sebuah data namun datanya bisa diambil dari sebuah variabel lain 
+    while (tiapkata >> kata){
+        data.push_back(kata); //untuk nambahin tiap katanya menjadi sebuah data baru di vectornya
+    }
+
+    //kondisi ketika nggak ada data yang dimasukkan
+    if (data.empty())
+    {
+        cout << "Mana data yang mau diurutkan bes?." << "\n coba Inputkan lagi lah bes"<<endl;
+        goto a;
+    }
+
+    cout << endl << "Data awal : ";
+    list(data);
+    cout << endl;
+
+    insertionSort(data);
+
+    cout << "Data akhir (A-Z): ";
+    list(data);
+
+    return 0;
+}
