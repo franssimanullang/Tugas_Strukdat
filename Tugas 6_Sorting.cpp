@@ -1,6 +1,8 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <cctype> //untuk pakai syntax tolower di fungsi lowercase
+#include <sstream> // untuk pakai syntax stringstream di main program
 using namespace std;
 
 //fungsi ini untuk kita ubah dulu semua katanya menjadi huruf kecil karena dalam ASCII huruf besar nilainya < huruf kecil
